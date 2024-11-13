@@ -1,14 +1,14 @@
 import { useMemo } from 'react';
-import { MessageSquareQuote, ArrowRightToLine, Settings2, Bookmark } from 'lucide-react';
+import { MessageSquareQuote, ArrowRightToLine, Settings2, Bookmark, LeafyGreen } from 'lucide-react';
 import {
   isAssistantsEndpoint,
   isAgentsEndpoint,
-  PermissionTypes,
   isParamEndpoint,
   EModelEndpoint,
   Permissions,
 } from 'librechat-data-provider';
 import type { TConfig, TInterfaceConfig } from 'librechat-data-provider';
+import { PermissionTypes } from '~/data-provider/permissionTypes'
 import type { NavLink } from '~/common';
 import BookmarkPanel from '~/components/SidePanel/Bookmarks/BookmarkPanel';
 import PanelSwitch from '~/components/SidePanel/Builder/PanelSwitch';
@@ -45,6 +45,11 @@ export default function useSideNavLinks({
     permission: Permissions.USE,
   });
 
+  const hasAccessToFiles = useHasAccess({
+    permissionType: PermissionTypes.FILES,
+    permission: Permissions.USE,
+  });
+
   const Links = useMemo(() => {
     const links: NavLink[] = [];
     if (
@@ -54,6 +59,7 @@ export default function useSideNavLinks({
       keyProvided &&
       interfaceConfig.parameters === true
     ) {
+      
       links.push({
         title: 'com_sidepanel_assistant_builder',
         label: '',
@@ -70,6 +76,7 @@ export default function useSideNavLinks({
       keyProvided &&
       interfaceConfig.parameters === true
     ) {
+      
       links.push({
         title: 'com_sidepanel_agent_builder',
         label: '',
@@ -102,14 +109,16 @@ export default function useSideNavLinks({
         Component: Parameters,
       });
     }
-
-    links.push({
-      title: 'com_sidepanel_attach_files',
-      label: '',
-      icon: AttachmentIcon,
-      id: 'files',
-      Component: FilesPanel,
-    });
+    
+    if(hasAccessToFiles) {
+      links.push({
+        title: 'com_sidepanel_attach_files',
+        label: '',
+        icon: AttachmentIcon,
+        id: 'files',
+        Component: FilesPanel,
+      });
+    }
 
     if (hasAccessToBookmarks) {
       links.push({
