@@ -268,7 +268,7 @@ html {
   font-family: Inter;
   font-style: normal;
   font-weight: 400;
-  src: url('$fonts/Inter-Regular.woff2') format('woff2');
+  src: url('/fonts/Inter-Regular.woff2') format('woff2');
   size-adjust: 94%;
 }
 
@@ -277,7 +277,7 @@ html {
   font-family: Inter;
   font-style: italic;
   font-weight: 400;
-  src: url('$fonts/Inter-Italic.woff2') format('woff2');
+  src: url('/fonts/Inter-Italic.woff2') format('woff2');
   size-adjust: 94%;
 }
 
@@ -286,7 +286,7 @@ html {
   font-family: Inter;
   font-style: normal;
   font-weight: 500;
-  src: url('$fonts/Inter-SemiBold.woff2') format('woff2');
+  src: url('/fonts/Inter-SemiBold.woff2') format('woff2');
   size-adjust: 94%;
 }
 
@@ -295,7 +295,7 @@ html {
   font-family: Inter;
   font-style: italic;
   font-weight: 500;
-  src: url('$fonts/Inter-SemiBoldItalic.woff2') format('woff2');
+  src: url('/fonts/Inter-SemiBoldItalic.woff2') format('woff2');
   size-adjust: 94%;
 }
 
@@ -304,7 +304,7 @@ html {
   font-family: Inter;
   font-style: normal;
   font-weight: 600;
-  src: url('$fonts/Inter-Bold.woff2') format('woff2');
+  src: url('/fonts/Inter-Bold.woff2') format('woff2');
   size-adjust: 94%;
 }
 
@@ -313,7 +313,7 @@ html {
   font-family: Inter;
   font-style: italic;
   font-weight: 600;
-  src: url('$fonts/Inter-BoldItalic.woff2') format('woff2');
+  src: url('/fonts/Inter-BoldItalic.woff2') format('woff2');
   size-adjust: 94%;
 }
 
